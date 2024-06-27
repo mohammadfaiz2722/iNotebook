@@ -1,0 +1,38 @@
+/* About.css */
+.about-section {
+    background-color: #007BFF;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px auto;
+    max-width: 600px;
+    color: #fff;
+    animation: faiz 1s infinite alternate;
+
+  }
+  
+  @keyframes faiz {
+    0%{
+transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-20px);
+    }
+    
+  }
+  .about-header {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+  
+  .about-description {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  
+  /* Style the emoji */
+  .about-header::before {
+    content: '🌟 '; /* Add any emoji you like here */
+  }
+  
