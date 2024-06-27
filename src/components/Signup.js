@@ -12,31 +12,31 @@ const Signup = (props) => {
   {
     e.preventDefault();
       const {name,email,password}=credentials;
-      const response = await fetch(`http://localhost:5000/api/auth/createuser`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/auth/createuser`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
-          },
+          }, 
           body:JSON.stringify({name,email,password})
         });
 const json=await response.json();
-console.log(json);
+
 if(json.success)
 {
 
   localStorage.setItem('token', json.authToken)
-  console.log(json.authtoken);
-  navigate('/') 
-  props.showAlert("Account created successfully","success")
+
+  navigate('/');
+  props.showAlert("Account created successfully","success");
 }
 else{
-  // console.log("Can't Signup");
+ 
   props.showAlert("Invalid credentials","danger")
 }
       }
   return (
     <div className="container mt-2">
-    <h1 className='my-4'>Create an account to use iNoteBook</h1>
+    <h1 className='my-4'>Create an account</h1>
     <div className='container'>
      <form onSubmit={handleSubmit}>
   <div className="mb-3">

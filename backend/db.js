@@ -1,8 +1,11 @@
 
 
 const mongoose = require('mongoose');
+require('dotenv').config();
+const {usernamee,passwordd}=process.env;
 
-const mongoURI = "mongodb://127.0.0.1:27017/inotebook"; // Replace with your MongoDB connection string
+// const mongoURI = "mongodb+srv://mohammadFaiz:faizilma@cluster0.1nsmgkt.mongodb.net/productDB"; // Replace with your MongoDB connection string
+const mongoURI=`mongodb+srv://${usernamee}:${passwordd}@cluster1.lmtoo7r.mongodb.net/iNotebook`
 let connectToMongo=()=>
 {
     
@@ -17,14 +20,5 @@ let connectToMongo=()=>
    
 }
 
-// const mongoose = require('mongoose');
-
-// main().catch(err => console.log(err));
-
-// async function main() {
-//   await mongoose.connect('mongodb://127.0.0.1:27017/inotebook');
-
-//   // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
-// }
 
 module.exports = connectToMongo;

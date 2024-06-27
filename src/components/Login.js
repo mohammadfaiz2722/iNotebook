@@ -6,7 +6,8 @@ const Login = (props) => {
   const [credentials, setCredentials] = useState({ email: "", password: "" })
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch(`http://localhost:5000/api/auth/login`, {
+    // console.log(process.env.URL,process.env.usernamee);
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/api/auth/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -15,10 +16,10 @@ const Login = (props) => {
     });
 
     const json = await response.json()
-    console.log(json);
+  
     if (json.success) {
       // save the authtoken and redirect
-      console.log(json.authToken);
+     
       localStorage.setItem('token', json.authToken)
       props.showAlert("Login Successful", "success")
       navigate('/')
@@ -29,7 +30,7 @@ const Login = (props) => {
   }
   const onChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value })
-    // console.log([e.target.name])
+    
   }
   return (
     <>

@@ -11,6 +11,13 @@ import Signup from './components/Signup';
 import { useState } from 'react';
 
 function App() {
+  // Inside your React component
+// useEffect(() => {
+//   fetch("/.netlify/functions/hello")
+//     .then((response) => response.json())
+//     .then((data) => console.log(data));
+// }, []);
+
   const [alert,setAlert]=useState(null)
   const showAlert=((message,type)=>
   {
