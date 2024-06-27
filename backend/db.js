@@ -2,10 +2,10 @@
 
 const mongoose = require('mongoose');
 require('dotenv').config();
-const {usernamee,passwordd}=process.env;
+
 
 // const mongoURI = "mongodb+srv://mohammadFaiz:faizilma@cluster0.1nsmgkt.mongodb.net/productDB"; // Replace with your MongoDB connection string
-const mongoURI=`mongodb+srv://${usernamee}:${passwordd}@cluster1.lmtoo7r.mongodb.net/iNotebook`
+const mongoURI=process.env.MONGO_URI
 let connectToMongo=()=>
 {
     
