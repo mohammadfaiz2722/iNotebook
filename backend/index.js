@@ -8,7 +8,14 @@ connectToMongo(); // Connect to MongoDB database
 const app = express();
 const port = 5000;
 
+// const corsOptions = {
+//   origin: "https://inotebook.onrender.com" ,
+//   methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//   allowedHeaders: ['Content-Type', 'Authorization'],
+//   credentials: true
+// };
 app.use(cors()); // Enable CORS
+// Enable CORS
 app.use(express.static(path.join(__dirname,'./build')))
 app.use(express.json()); // Parse JSON request bodies
 
