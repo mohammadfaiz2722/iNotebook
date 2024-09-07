@@ -6,6 +6,7 @@ const NoteState = (props) => {
   const host="https://inotebook-12.onrender.com"
 // let noteInitial=[]
   const [notes,setNotes]=useState([])
+  const token=localStorage.getItem('token')
   //Add a note
   const getNotes = async () => {
     try {
